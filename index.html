@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="bookstore">
+  <head>
+    <title>Bookstore</title>
+    <link href="https://fonts.googleapis.com/css?family=Dosis:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700" rel="stylesheet">
+    <link href="dist/bookstore.min.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js"></script>
+    <script src="dist/bookstore.min.js" async></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <a href="#/">
+          <h1>Bookstore<small>(demo)</small></h1>
+        </a>
+      </header>
+      <main class="row" ng-view></main>
+      <footer class="row">
+        <p class="text-center text-muted col-xs-12 col-md-10 col-md-offset-1">
+        This is a sample bookstore application implemented using AngularJS. All
+        presented information should only used in the context of demoing the
+        programming techniques used in this website.</p>
+      </footer>
+    </div>
+  </body>
+</html>

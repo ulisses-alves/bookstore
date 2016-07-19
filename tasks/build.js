@@ -1,0 +1,25 @@
+var gulp = require('gulp')
+var uglify = require('gulp-uglify')
+var sourcemaps = require('gulp-sourcemaps')
+var concat = require('gulp-concat')
+var rename = require('gulp-rename')
+var pump = require('pump')
+var sass = require('gulp-sass')
+var merge = require('merge-stream')
+
+gulp.task('build', ['clean'], function (cb) {
+  var scripts = gulp.src(['src/scripts/bookstore.js', 'src/scripts/**/*.js'])
+    .pipe(sourcemaps.init())
+    .pipe(concat('bookstore.js'))
+    .pipe(uglify({mangle: false}))
+    .pipe(rename({extname: '.min.js'}))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('dist'))
+
+  var styles = gulp.src(['src/styles/*.scss'])
+    .pipe(sass({outputStyle: 'compressed'}))
+    .pipe(rename({extname: '.min.css'}))
+    .pipe(gulp.dest('dist'))
+
+  return merge([scripts, styles])
+})

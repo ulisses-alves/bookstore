@@ -1,0 +1,14 @@
+<ul class="row">
+  <li ng-repeat="book in books" class="col-xs-6 col-md-3">
+    <figure>
+      <a ng-href="#/book/{{book.id}}" class="thumbnail">
+        <div>
+          <img ng-src="{{book.cover}}" alt="{{book.title}}">
+        </div>
+        <figcaption class="caption text-center">
+          {{book.title|truncate:40}}
+        </figcaption>
+      </a>
+    </figure>
+  </li>
+</ul>

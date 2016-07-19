@@ -1,0 +1,47 @@
+bookshelf {
+  display: block;
+  min-height: 100vh;
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    margin-bottom: 30px;
+
+    &.ng-leave, &.ng-enter {
+      animation: 200ms ease-out fade;
+    }
+
+    &.ng-enter {
+      animation-direction: reverse;
+    }
+  }
+
+  .thumbnail {
+    margin-bottom: 10px;
+    background-color: $gray-lighter;
+
+    > div {
+      position: relative;
+
+      &:before {
+        content: "";
+        display: block;
+        padding-top: 140%;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    figcaption {
+      height: 5em;
+    }
+  }
+}

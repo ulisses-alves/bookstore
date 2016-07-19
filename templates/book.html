@@ -1,0 +1,9 @@
+<figure class="book row">
+  <img ng-src="{{book.cover}}" alt="book cover"
+    class="col-xs-12 col-md-6">
+  <figcaption class="col-xs-12 col-md-6">
+    <h2>{{book.title}}</h2>
+    <small>By {{book.authors.join(', ')}}</small>
+    <p class="text-justify">{{book.description}}</p>
+  </figcaption>
+</figure>
